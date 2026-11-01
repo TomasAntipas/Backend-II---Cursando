@@ -23,13 +23,13 @@ Plataforma de Eventos e Inscripciones. El objetivo es permitir la publicación d
 Clonar el repositorio:
 
 ```bash
-git clone URL_DEL_REPOSITORIO
+git clone https://github.com/TomasAntipas/Backend-II---Cursando.git
 ```
 
 Ingresar a la carpeta del proyecto:
 
 ```bash
-cd backend-ii---cursando
+cd Backend-II---Cursando
 ```
 
 Instalar las dependencias:
@@ -67,31 +67,54 @@ npm start
 
 El servidor estará disponible en:
 
-`http://localhost:8080`
+http://localhost:8080
 
 ## Estructura del proyecto
 
 ```text
-src/
-├── app.js
-├── server.js
-├── config/
-├── routes/
-│   ├── health.router.js
-│   ├── events.router.js
-│   └── sessions.router.js
-├── controllers/
-│   ├── health.controller.js
-│   ├── events.controller.js
-│   └── sessions.controller.js
-├── services/
-├── repositories/
-├── dao/
-├── models/
-│   ├── User.js
-│   └── Event.js
-├── middlewares/
-└── utils/
+Backend-II---Cursando/
+│
+├── src/
+│   ├── app.js
+│   ├── server.js
+│   │
+│   ├── config/
+│   │   └── .gitkeep
+│   │
+│   ├── routes/
+│   │   ├── health.router.js
+│   │   ├── events.router.js
+│   │   └── sessions.router.js
+│   │
+│   ├── controllers/
+│   │   ├── health.controller.js
+│   │   ├── events.controller.js
+│   │   └── sessions.controller.js
+│   │
+│   ├── services/
+│   │   └── .gitkeep
+│   │
+│   ├── repositories/
+│   │   └── .gitkeep
+│   │
+│   ├── dao/
+│   │   └── .gitkeep
+│   │
+│   ├── models/
+│   │   ├── User.js
+│   │   └── Event.js
+│   │
+│   ├── middlewares/
+│   │   └── .gitkeep
+│   │
+│   └── utils/
+│       └── .gitkeep
+│
+├── .env.example
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
 ## Rutas disponibles
@@ -102,6 +125,30 @@ src/
 | GET | /api/events | Obtiene el listado de eventos |
 | POST | /api/sessions/register | Ruta inicial para registro |
 | POST | /api/sessions/login | Ruta inicial para login |
+
+## Respuestas de los endpoints
+
+### GET /api/health
+
+Respuesta HTTP 200:
+
+```json
+{
+  "status": "ok",
+  "message": "Servidor activo"
+}
+```
+
+### GET /api/events
+
+Respuesta HTTP 200:
+
+```json
+{
+  "status": "success",
+  "payload": []
+}
+```
 
 ## Estado del proyecto
 
