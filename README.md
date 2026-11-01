@@ -121,10 +121,10 @@ Backend-II---Cursando/
 
 | Método | Endpoint | Descripción |
 |---|---|---|
-| GET | /api/health | Verifica el estado del servidor |
-| GET | /api/events | Obtiene el listado de eventos |
-| POST | /api/sessions/register | Ruta inicial para registro |
-| POST | /api/sessions/login | Ruta inicial para login |
+| GET | `/api/health` | Verifica el estado del servidor |
+| GET | `/api/events` | Obtiene el listado de eventos |
+| POST | `/api/sessions/register` | Ruta inicial para registro |
+| POST | `/api/sessions/login` | Ruta inicial para login |
 
 ## Respuestas de los endpoints
 
