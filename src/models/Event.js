@@ -1,6 +1,9 @@
+
+import { randomUUID } from "node:crypto";
+
 class Event {
     constructor({
-    id = crypto.randomUUID(),
+    id = randomUUID(),
     title,
     description,
     date,
