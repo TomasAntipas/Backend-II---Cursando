@@ -1,8 +1,8 @@
-import "dotenv/config";
+
 import app from "./app.js";
+import config from "./config/index.js";
 
-const PORT = process.env.PORT || 8080;
-
-app.listen(PORT, () => {
-    console.log(`Servidor escuchando en el puerto ${PORT}`);
+app.listen(config.PORT, () => {
+    console.log(`Servidor activo en http://localhost:${config.PORT}`);
+    console.log(`Entorno: ${config.NODE_ENV}`);
 });
