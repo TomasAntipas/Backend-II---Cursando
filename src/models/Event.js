@@ -1,24 +1,43 @@
 
-import { randomUUID } from "node:crypto";
+import mongoose from "mongoose";
 
-class Event {
-    constructor({
-    id = randomUUID(),
-    title,
-    description,
-    date,
-    location,
-    capacity,
-    category,
-    }) {
-    this.id = id;
-    this.title = title;
-    this.description = description;
-    this.date = date;
-    this.location = location;
-    this.capacity = capacity;
-    this.category = category;
+const eventSchema = new mongoose.Schema(
+    {
+    title: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    description: {
+        type: String,
+        trim: true,
+        default: "",
+    },
+    date: {
+        type: Date,
+        required: true,
+    },
+    location: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    capacity: {
+        type: Number,
+        required: true,
+        min: 1,
+    },
+    category: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    },
+    {
+    timestamps: true,
     }
-}
+);
+
+const Event = mongoose.model("Event", eventSchema);
 
 export default Event;

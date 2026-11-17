@@ -1,15 +1,22 @@
-export const registerUser = (req, res) => {
-    res.status(200).json({
-    status: "success",
-    message:
-        "Endpoint de registro disponible. La lógica de autenticación se implementará en la próxima etapa.",
+
+import sessionsService from "../services/sessions.service.js";
+
+export const registerUser = async (req, res, next) => {
+    try {
+    const user = await sessionsService.register(req.body);
+
+    return res.status(201).json({
+        status: "success",
+        payload: user,
     });
+    } catch (error) {
+    next(error);
+    }
 };
 
 export const loginUser = (req, res) => {
     res.status(200).json({
     status: "success",
-    message:
-        "Endpoint de login disponible. La lógica de autenticación se implementará en la próxima etapa.",
+    message: "El login se implementará en una próxima etapa.",
     });
 };
